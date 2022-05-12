@@ -1,3 +1,5 @@
+WIP: Not quite published to NPM yet!
+
 # ts-auto-fuzzer
 
 This NPM library lets you automatically generate randomized object instances from just your Typescript types in 1 line of boilerplate!
