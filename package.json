@@ -1,0 +1,44 @@
+{
+  "name": "ts-auto-fuzzer",
+  "version": "0.0.1",
+  "description": "Generate random object from your TS types in 1 line",
+  "engineStrict": false,
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "keywords": [
+    "fuzz",
+    "fuzzy",
+    "typescript",
+    "types",
+    "mock",
+    "random",
+    "test",
+    "fuzzer",
+    "generator",
+    "factory"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gittyeric/ts-auto-fuzzer"
+  },
+  "devDependencies: {
+    "rimraf": "3.0.2"
+  },
+  "dependencies": {
+    "typescript-is": "^0.19.0"
+  },
+  "scripts": {
+    "clean": "rimraf coverage build tmp dist",
+    "build": "npm run build:ts-js && npm run build:ts-types && npm run build:browserify && npm run build:min",
+    "build:ts-js": "tsc -p tsconfig.json",
+    "build:ts-types": "tsc -p tsconfig.release.json",
+    "deploy-dry": "npm run build & npm run lint && git status",
+    "watch": "tsc -w -p tsconfig.release.json",
+    "lint": "tslint -t stylish --project \"tsconfig.json\"",
+  },
+  "author": "Eric <git@letsmakeit.com>",
+  "license": "GNU"
+}
